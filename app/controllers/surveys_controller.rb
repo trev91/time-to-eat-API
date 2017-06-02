@@ -10,7 +10,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1
   def show
-    render json: @survey
+    render json: @survey, @survey.questions, @survey.responses
   end
 
   # POST /surveys
