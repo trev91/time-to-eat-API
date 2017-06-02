@@ -1,3 +1,3 @@
 class Response < ApplicationRecord
-  has_one :question
+  belongs_to :question
 end
