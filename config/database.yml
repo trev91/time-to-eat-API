@@ -1,0 +1,9 @@
+development:
+    adapter: mysql2
+    encoding: utf8
+    database: timetoeatapi_development
+    pool: 5
+    username: 
+    password:
+    host: localhost
+    port: 3306
