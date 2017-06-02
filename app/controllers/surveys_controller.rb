@@ -11,7 +11,8 @@ class SurveysController < ApplicationController
   # GET /surveys/1
   def show
     @survey = Survey.find(params[:id])
-    render json: @survey
+
+    render json: @survey, include: ‘questions.responses, fields: { questions: { responses: [:keyword, :answer] } }
   end
 
   # POST /surveys

@@ -1,4 +1,4 @@
 class SurveySerializer < ActiveModel::Serializer
   attributes :id, :name
-  has_many :questions, include: :all
+  has_many :questions
 end
