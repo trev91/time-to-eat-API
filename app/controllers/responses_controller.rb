@@ -10,6 +10,7 @@ class ResponsesController < ApplicationController
 
   # GET /responses/1
   def show
+    @response = Response.find(params[:id])
     render json: @response
   end
 
@@ -46,6 +47,6 @@ class ResponsesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def response_params
-      params.require(:response).permit(:question_id, :answer, :keyword)
+      params.require(:response).permit(:question_id, :answer, :keyword, :id)
     end
 end
