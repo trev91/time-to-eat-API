@@ -10,7 +10,7 @@ class SurveysController < ApplicationController
 
   # GET /surveys/1
   def show
-    @survey = Survey.find(params[:survey_id])
+    @survey = Survey.find(params[:id])
     render json: @survey
   end
 
@@ -47,6 +47,6 @@ class SurveysController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def survey_params
-      params.require(:survey).permit(:name, :survey_id)
+      params.require(:survey).permit(:name, :id)
     end
 end
