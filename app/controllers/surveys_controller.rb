@@ -39,10 +39,35 @@ class SurveysController < ApplicationController
     @survey.destroy
   end
 
+  def submit
+    yesses = all_responses.select {|r| r.answer == "Yes" || "yes" }
+    @keywords = []
+    yesses.each do |y|
+      @keywords << y.to_s
+    end
+    #formulate query string
+
+    #hit google places API
+
+    #return array of places
+
+    #send array to Results action
+  end
+
+  def results
+    #logic to determine what will be shown the user
+    
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_survey
       @survey = Survey.find(params[:id])
+    end
+
+    def all_responses
+      survey = Survey.find(params[:id])
+      return @responses = Responses.find_by('survey_id', survey.id)
     end
 
     # Only allow a trusted parameter "white list" through.
